@@ -1,0 +1,34 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: Project architecture and folder structure standards for Nomad Hotels frontend challenge
+globs: ["src/**/*"]
+alwaysApply: true
+---
+
+# Nomad Hotels - Project Architecture
+
+## Tech Stack
+- Next.js 15 with App Router (SSR for SEO)
+- Chakra UI v3 with official snippets (@chakra-ui/cli)
+- TypeScript strict mode
+- pnpm package manager
+- Biome for linting + formatting
+- Deploy on Vercel
+
+## Folder Structure
+
+## File Naming Conventions
+- Components: PascalCase (HeroSection.tsx)
+- Files/folders: kebab-case (hotel-list.ts)
+- Hooks: camelCase starting with 'use' (useHotelData.ts)
+- Types: PascalCase (HotelListProps.ts)
+- Constants: SCREAMING_SNAKE_CASE (API_ENDPOINTS.ts)
+
+## Import Standards
+- Use @/ alias for all internal imports
+- Use named exports for components
+- Group imports: React, libraries, internal

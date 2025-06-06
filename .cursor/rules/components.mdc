@@ -1,0 +1,49 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: Component architecture and React patterns for Nomad Hotels
+globs: ["src/components/**/*"]
+alwaysApply: true
+---
+
+# Component Standards
+
+## Component Architecture (Atomic Design)
+- **Atoms**: `/ui/` - Chakra UI primitives and snippets
+- **Organisms**: `/sections/` - Complex page sections (Hero, HotelList)
+- **Layout**: `/layout/` - Navigation, Footer, layout wrappers
+
+## React & Next.js Patterns
+- Use Server Components by default
+- Add 'use client' only when absolutely necessary
+- Prefer Server Actions for form handling
+- One component per file with named exports
+
+## Component Structure
+```typescript
+interface ComponentNameProps {
+  // Props definition
+}
+
+export function ComponentName({ prop }: ComponentNameProps) {
+  // Component logic
+  return (
+    // JSX
+  );
+}
+```
+
+## Props & TypeScript
+- All props must have TypeScript interfaces
+- Props interfaces named: ComponentNameProps
+- Use strict typing, avoid 'any'
+- Define interfaces for all API responses
+
+## Chakra UI Usage
+- Use official snippets from @chakra-ui/cli
+- Prefer Chakra components over custom CSS
+- Use Chakra's responsive design props
+- Implement proper color mode support

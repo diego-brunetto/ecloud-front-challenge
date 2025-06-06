@@ -1,0 +1,52 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: API integration patterns and data handling for Nomad Hotels
+globs: ["src/lib/api/**/*", "src/app/**/*"]
+alwaysApply: true
+---
+
+# API Integration Patterns
+
+## Data Loading Strategy
+- **SSR (Server Components)**: Initial content loading
+- **Client-side**: Interactive features (availability, reservations)
+
+## Server-Side Pattern (Content API)
+```typescript
+// app/page.tsx
+export default async function HomePage() {
+  const hotels = await getHotels();
+  return <HotelList hotels={hotels} />;
+}
+```
+
+## Client-Side Pattern (Interactive)
+```typescript
+// components/ReservationDrawer.tsx
+'use client'
+export function ReservationDrawer() {
+  const { data, loading, error } = useAvailability();
+  // Component logic
+}
+```
+
+## Error Handling Standards
+- Use Error Boundaries for component errors
+- Implement proper loading and error states
+- Provide user-friendly error messages
+- Log errors appropriately for debugging
+
+## TypeScript API Types
+- Define interfaces for all API responses
+- Use proper error typing
+- Implement loading state types
+- Create reusable API client patterns
+
+## Caching Strategy
+- Use Next.js built-in caching for static content
+- Implement appropriate revalidation
+- Cache user interactions appropriately
