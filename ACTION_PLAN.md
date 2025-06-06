@@ -38,9 +38,9 @@
 
 #### Tasks
 
-- [ ] Create Next.js 15 project with App Router + TypeScript
-- [ ] Configure Chakra UI v3 + theme setup
-- [ ] Create modular folder structure:
+- [x] Create Next.js 15 project with App Router + TypeScript
+- [x] Configure Chakra UI v3 + theme setup
+- [x] Create modular folder structure (via Cursor Rules):
 
   ```
   /app
@@ -59,9 +59,11 @@
   /public
   ```
 
-- [ ] Setup Biome (linting + formatting) + configuration
-- [ ] Initialize Git repository + connect to Vercel
-- [ ] Define base TypeScript schemas and interfaces
+- [x] Setup Biome (linting + formatting) + configuration
+- [x] Initialize Git repository + connect to Vercel
+- [x] Define base TypeScript schemas and interfaces
+
+**STATUS: ✅ COMPLETED**
 
 #### Sidequest Considerations
 
@@ -83,6 +85,7 @@
 
 #### Tasks
 
+- [ ] Configure Gibson typography (from Figma design)
 - [ ] Main layout with Nav + Footer
 - [ ] Navigation component (without interactions)
 - [ ] Static Hero section
