@@ -85,7 +85,7 @@
 
 #### Tasks
 
-- [ ] Configure Gibson typography (from Figma design)
+- [x] Configure Gibson typography
 - [ ] Main layout with Nav + Footer
 - [ ] Navigation component (without interactions)
 - [ ] Static Hero section
