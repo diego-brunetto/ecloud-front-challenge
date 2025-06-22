@@ -1,4 +1,5 @@
 import { Provider } from "@/components/ui/provider";
+import Navigation from "@/components/layout/navigation";
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
@@ -46,9 +47,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html suppressHydrationWarning lang="en" className={gibson.variable}>
-      <body>
-        <Provider>{children}</Provider>
+    <html lang="en" className={gibson.variable}>
+      <body style={{ backgroundColor: "black" }}>
+        <Provider>
+          <Navigation />
+          <main>{children}</main>
+        </Provider>
       </body>
     </html>
   );
