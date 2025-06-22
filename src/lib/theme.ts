@@ -1,6 +1,6 @@
-import { createSystem, defaultConfig } from "@chakra-ui/react";
+import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
 
-const theme = createSystem(defaultConfig, {
+const config = defineConfig({
   theme: {
     tokens: {
       fonts: {
@@ -11,8 +11,15 @@ const theme = createSystem(defaultConfig, {
           value: "var(--font-gibson), sans-serif",
         },
       },
+      shadows: {
+        logo: {
+          value: "0px 12px 32px 0px #00000040",
+        },
+      },
     },
   },
 });
+
+const theme = createSystem(defaultConfig, config);
 
 export default theme;
