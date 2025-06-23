@@ -6,14 +6,14 @@ interface CalendarIconProps {
   variant?: "blue" | "white";
 }
 
-const CalendarIcon = ({ 
+const     CalendarIcon = ({ 
   width = 24, 
   height = 24, 
   className,
   color,
   variant = "blue"
 }: CalendarIconProps) => {
-  const fillColor = color || (variant === "white" ? "white" : "#3D63A9");
+  const fillColor = color || (variant === "white" ? "white" : "var(--colors-brand-blue)");
   
   return (
     <svg
