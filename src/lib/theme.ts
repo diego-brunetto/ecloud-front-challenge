@@ -11,6 +11,13 @@ const config = defineConfig({
           value: "var(--font-gibson), sans-serif",
         },
       },
+      colors: {
+        brand: {
+          blue: {
+            value: "#3D63A9",
+          },
+        },
+      },
       shadows: {
         logo: {
           value: "0px 12px 32px 0px #00000040",
