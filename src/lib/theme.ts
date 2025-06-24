@@ -4,9 +4,6 @@ const config = defineConfig({
   theme: {
     tokens: {
       fonts: {
-        heading: {
-          value: "var(--font-gibson), sans-serif",
-        },
         body: {
           value: "var(--font-gibson), sans-serif",
         },
@@ -16,10 +13,13 @@ const config = defineConfig({
           blue: {
             value: "#3D63A9",
           },
+          black: {
+            value: "#2B2B2B",
+          },
         },
       },
       shadows: {
-        logo: {
+        base: {
           value: "0px 12px 32px 0px #00000040",
         },
       },
