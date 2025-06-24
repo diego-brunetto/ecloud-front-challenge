@@ -1,3 +1,11 @@
 /* Remove the TypeKit import since we're using local fonts now */
 
 /* El resto del CSS sin font-family manual */
+
+body {
+  color: #2b2b2b;
+}
+
+* {
+  color: inherit;
+}
