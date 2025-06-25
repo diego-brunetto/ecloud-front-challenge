@@ -15,6 +15,7 @@ const DesktopLogo = ({ width = 95, height = 16, className }: LogoProps) => (
     xmlns="http://www.w3.org/2000/svg"
     className={className}
   >
+    <title>Logo</title>
     <g clipPath="url(#clip0_366_190)">
       <path
         d="M0.0561218 0.38269H2.97184V11.59L16.0379 0.38269H18.4434V15.5991H15.4183V4.3918L2.46159 15.5991H0.0561218V0.38269Z"
@@ -59,6 +60,7 @@ const MobileLogo = ({ width = 71, height = 12, className }: LogoProps) => (
     xmlns="http://www.w3.org/2000/svg"
     className={className}
   >
+    <title>Logo</title>
     <g clipPath="url(#clip0_366_103)">
       <path
         d="M0 0.286987H2.18679V8.69245L11.9863 0.286987H13.7904V11.6993H11.5216V3.29382L1.8041 11.6993H0V0.286987Z"
