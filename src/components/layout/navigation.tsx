@@ -74,6 +74,7 @@ const NavigationLink = ({
           <Button
             variant="plain"
             fontSize="15px"
+            p={0}
             _hover={{ textDecoration: "underline" }}
             {...props}
           >
