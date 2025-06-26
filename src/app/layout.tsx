@@ -1,5 +1,5 @@
-import { Provider } from "@/components/ui/provider";
 import Navigation from "@/components/layout/navigation";
+import { Provider } from "@/components/ui/provider";
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
@@ -48,7 +48,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={gibson.variable}>
-      <body style={{ backgroundColor: "black" }}>
+      <body>
         <Provider>
           <Navigation />
           <main>{children}</main>
