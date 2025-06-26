@@ -1,4 +1,4 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Heading } from "@chakra-ui/react";
 
 const Hero = () => {
   return (
@@ -14,7 +14,8 @@ const Hero = () => {
       alignItems="center"
       paddingX={{ base: "24px", md: "84px" }}
     >
-      <Text
+      <Heading
+        as="h1"
         fontWeight="bold"
         fontSize={{ base: "60px", md: "100px" }}
         color="white"
@@ -22,7 +23,7 @@ const Hero = () => {
         lineHeight={{ base: "68px", md: "110px" }}
       >
         Tu tribu te espera
-      </Text>
+      </Heading>
     </Flex>
   );
 };
