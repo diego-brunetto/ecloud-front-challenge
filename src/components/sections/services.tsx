@@ -1,4 +1,5 @@
 import { LocationIcon } from "@/components/icons";
+import Slider from "@/components/ui/slider";
 import { Box, Flex, HStack, Heading, Text, VStack } from "@chakra-ui/react";
 
 const services = [
@@ -27,6 +28,56 @@ const services = [
     color: "brand.magenta",
   },
 ];
+
+interface ServiceCardProps {
+  service: {
+    location: string;
+    name: string;
+    description: string;
+    image: string;
+    color: string;
+  };
+}
+
+const ServiceCard = ({ service }: ServiceCardProps) => (
+  <Flex
+    bg="gray"
+    padding={4}
+    h={{ base: "400px", md: "432px" }}
+    minW={{ base: "100%", md: "624px" }}
+    alignItems="end"
+    borderRadius="2xl"
+    shadow="base"
+    backgroundImage={`url('${service.image}')`}
+    backgroundSize="cover"
+    backgroundPosition="center"
+    position="relative"
+  >
+    <Box
+      bg={service.color}
+      w={{ base: "100%", md: "356px" }}
+      h="108px"
+      p={{ base: 4, md: 6 }}
+      borderRadius="xl"
+      position={{ base: "relative", md: "absolute" }}
+      right={{ base: "0", md: "-24px" }}
+      shadow="base"
+    >
+      <HStack>
+        <LocationIcon />
+        <Text
+          color="white"
+          fontWeight="400"
+          fontSize="17px"
+          lineHeight="28px"
+          letterSpacing="0.04em"
+        >
+          {service.location}
+        </Text>
+      </HStack>
+    </Box>
+  </Flex>
+);
 
 const Services = () => {
   return (
@@ -67,53 +118,25 @@ const Services = () => {
             experimentes el viaje que va a cambiar algo en ti.
           </Text>
         </VStack>
-        <Flex
-          direction={{ base: "column", md: "row" }}
-          gap={{ base: 6, md: "132px" }}
-          position={{ base: "relative", md: "absolute" }}
-          bottom={{ base: "0", md: "72px" }}
-        >
+
+        {/* Mobile Version */}
+        <VStack gap={6} hideFrom="md">
           {services.map((service) => (
-            <Flex
-              key={service.name}
-              bg="gray"
-              padding={4}
-              h={{ base: "400px", md: "432px" }}
-              minW={{ base: "100%", md: "624px" }}
-              alignItems="end"
-              borderRadius="2xl"
-              shadow="base"
-              backgroundImage={`url('${service.image}')`}
-              backgroundSize="cover"
-              backgroundPosition="center"
-              position="relative"
-            >
-              <Box
-                bg={service.color}
-                w={{ base: "100%", md: "356px" }}
-                h="108px"
-                p={{ base: 4, md: 6 }}
-                borderRadius="xl"
-                position={{ base: "relative", md: "absolute" }}
-                right={{ base: "0", md: "-24px" }}
-                shadow="base"
-              >
-                <HStack>
-                  <LocationIcon />
-                  <Text
-                    color="white"
-                    fontWeight="400"
-                    fontSize="17px"
-                    lineHeight="28px"
-                    letterSpacing="0.04em"
-                  >
-                    {service.location}
-                  </Text>
-                </HStack>
-              </Box>
-            </Flex>
+            <ServiceCard key={service.name} service={service} />
           ))}
-        </Flex>
+        </VStack>
+
+        {/* Desktop Version with Slider */}
+        <Box position="absolute" bottom="72px" hideBelow="md">
+          <Slider
+            itemWidth="624px"
+            gap={132}
+            slides={services.map((service) => ({
+              id: service.name,
+              content: <ServiceCard service={service} />,
+            }))}
+          />
+        </Box>
       </Flex>
     </Flex>
   );
