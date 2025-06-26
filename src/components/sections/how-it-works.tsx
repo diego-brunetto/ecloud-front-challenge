@@ -1,4 +1,4 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Highlight, Text } from "@chakra-ui/react";
 
 const HowItWorks = () => {
   return (
@@ -19,17 +19,18 @@ const HowItWorks = () => {
         textAlign="center"
         maxW="1055px"
       >
-        Un hogar con espacio para coworkear, conectarte con{" "}
-        <Text
-          as="span"
-          bg="brand.blue"
-          color="white"
-          fontWeight="600"
-          paddingX="3"
+        <Highlight
+          query="aventuras locales"
+          styles={{
+            bg: "brand.blue",
+            color: "white",
+            fontWeight: "600",
+            paddingX: "3",
+          }}
         >
-          aventuras locales
-        </Text>{" "}
-        y personas increíbles.
+          Un hogar con espacio para coworkear, conectarte con aventuras locales
+          y personas increíbles.
+        </Highlight>
       </Text>
     </Flex>
   );
