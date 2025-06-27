@@ -3,11 +3,13 @@ import { Flex, Heading } from "@chakra-ui/react";
 const Hero = () => {
   return (
     <Flex
-      backgroundImage="url('/images/hero-bg.png')"
+      backgroundImage={{
+        base: "url('/images/hero/hero-mobile.webp')",
+        md: "url('/images/hero/hero-desk.webp')",
+      }}
       backgroundSize="cover"
-      backgroundPosition="center"
+      backgroundPosition={{ base: "center", md: "center top" }}
       backgroundRepeat="no-repeat"
-      bg="red"
       minH="800px"
       h="800px"
       minW="100%"
@@ -19,7 +21,7 @@ const Hero = () => {
         fontWeight="bold"
         fontSize={{ base: "60px", md: "100px" }}
         color="white"
-        maxW="480px"
+        maxW={{ base: "280px", md: "480px" }}
         lineHeight={{ base: "68px", md: "110px" }}
       >
         Tu tribu te espera
