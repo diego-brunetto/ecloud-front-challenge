@@ -1,3 +1,4 @@
+import Footer from "@/components/layout/footer";
 import Navigation from "@/components/layout/navigation";
 import { Provider } from "@/components/ui/provider";
 import type { Metadata } from "next";
@@ -52,6 +53,7 @@ export default function RootLayout({
         <Provider>
           <Navigation />
           <main>{children}</main>
+          <Footer />
         </Provider>
       </body>
     </html>
