@@ -23,6 +23,7 @@ const Hero = () => {
         color="white"
         maxW={{ base: "280px", md: "480px" }}
         lineHeight={{ base: "68px", md: "110px" }}
+        marginTop={{ base: "150px", md: "0px" }}
       >
         Tu tribu te espera
       </Heading>
