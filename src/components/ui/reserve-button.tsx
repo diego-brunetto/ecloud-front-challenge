@@ -47,7 +47,7 @@ const ReserveButton = ({
       fontSize="15px"
       rounded="lg"
       {...currentVariant}
-      maxW={fullWidth ? "100%" : "fit-content"}
+      minW={fullWidth ? "100%" : "fit-content"}
       size={size}
     >
       {showIcon && (
