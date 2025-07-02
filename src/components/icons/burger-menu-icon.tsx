@@ -11,7 +11,7 @@ const BurgerMenuIcon = ({
   className,
   color
 }: BurgerMenuIconProps) => {
-  const fillColor = color || "var(--colors-brand-blue)";
+  const fillColor = color || "#3D63A9";
   
   return (
     <svg
