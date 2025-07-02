@@ -24,16 +24,30 @@ const ReserveButton = ({
       backgroundColor: "brand.blue",
       color: "white",
       iconVariant: "white" as const,
+      boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
       _hover: {
         backgroundColor: "brand.blue",
+        transform: "translateY(-2px) scale(1.02)",
+        boxShadow: "0 8px 25px rgba(0, 0, 0, 0.15)",
+      },
+      _active: {
+        transform: "translateY(0px) scale(1)",
+        boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
       },
     },
     white: {
       backgroundColor: "white",
       color: "brand.blue",
       iconVariant: "blue" as const,
+      boxShadow: "0 2px 4px rgba(0, 0, 0, 0.08)",
       _hover: {
         backgroundColor: "#F9FAFB",
+        transform: "translateY(-2px) scale(1.02)",
+        boxShadow: "0 8px 25px rgba(0, 0, 0, 0.12)",
+      },
+      _active: {
+        transform: "translateY(0px) scale(1)",
+        boxShadow: "0 2px 4px rgba(0, 0, 0, 0.08)",
       },
     },
   };
@@ -49,6 +63,8 @@ const ReserveButton = ({
       {...currentVariant}
       minW={fullWidth ? "100%" : "fit-content"}
       size={size}
+      transition="all 0.25s cubic-bezier(0.4, 0, 0.2, 1)"
+      cursor="pointer"
     >
       {showIcon && (
         <CalendarIcon
