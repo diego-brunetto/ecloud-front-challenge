@@ -1,14 +1,16 @@
 import { LogoIcon } from "@/components/icons";
-import ReserveButton from "@/components/ui/reserve-button";
+import ReserveDrawer from "@/components/ui/reserve-drawer";
 import {
   Box,
   Button,
   Flex,
+  HStack,
   HoverCard,
   Link,
   Portal,
   VStack,
 } from "@chakra-ui/react";
+import NavigationDrawer from "./navigation-drawer";
 
 // Types
 interface SubmenuItem {
@@ -38,7 +40,6 @@ const NAV_ITEMS: NavItem[] = [
     ],
   },
   { label: "Únete", href: "/unete" },
-  { label: "English", href: "/en" },
 ];
 
 // Shared styles
@@ -141,8 +142,15 @@ const DesktopNavigation = () => (
         marginLeft={index === 0 ? 3 : undefined}
       />
     ))}
-    <ReserveButton showIcon />
+    <ReserveDrawer showIcon />
   </Box>
+);
+
+const MobileNavigation = () => (
+  <HStack hideFrom="lg">
+    <ReserveDrawer showIcon buttonVariant="white" buttonSize="lg" />
+    <NavigationDrawer />
+  </HStack>
 );
 
 const Navigation = () => {
@@ -154,7 +162,7 @@ const Navigation = () => {
       paddingX="8"
       alignItems="center"
       justifyContent="space-between"
-      position="absolute"
+      position="fixed"
       top={{ base: "14", md: "8" }}
       left="0"
       zIndex="10"
@@ -162,6 +170,7 @@ const Navigation = () => {
     >
       <Logo />
       <DesktopNavigation />
+      <MobileNavigation />
     </Flex>
   );
 };
