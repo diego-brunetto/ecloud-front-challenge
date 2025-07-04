@@ -10,6 +10,7 @@ import {
   VStack,
   useBreakpointValue,
 } from "@chakra-ui/react";
+import Image from "next/image";
 
 interface ReserveDrawerProps {
   showIcon?: boolean;
@@ -19,6 +20,7 @@ interface ReserveDrawerProps {
 
 const services = [
   {
+    image: "/images/services/urban-2.webp",
     name: "Urban",
     description:
       "Social hub de alta experiencia, para millennials y zetas ejecutivos.",
@@ -27,6 +29,7 @@ const services = [
     price: "Desde $4560/Noche",
   },
   {
+    image: "/images/services/tribe-2.webp",
     name: "Tribe",
     description:
       "Exploradores, artistas y emprendedores juntos en un lugar único.",
@@ -34,6 +37,7 @@ const services = [
     price: "Desde $3190/Noche",
   },
   {
+    image: "/images/services/family.webp",
     name: "Family",
     description:
       "Vive junto a toda tu familia la mejor experiencia de sus vidas.",
@@ -55,16 +59,17 @@ const ServiceCard = ({ service }: { service: (typeof services)[0] }) => {
       gap={{ base: 8, md: 6 }}
     >
       <Box
-        bg="red"
         minW={{ base: "100%", md: "250px" }}
         h={{ base: "200px", md: "262px" }}
         borderRadius={8}
+        overflow="hidden"
+        position="relative"
       >
-        image
+        <Image src={service.image} alt={service.name} fill objectFit="cover" />
       </Box>
       <VStack alignItems="flex-start" gap={4}>
         <VStack alignItems="flex-start" gap={3}>
-          <Text fontSize="2xl" fontWeight={600}>
+          <Text fontSize="2xl" fontWeight={600} h="20px">
             {service.name}
           </Text>
           <Text
