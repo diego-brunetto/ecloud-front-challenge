@@ -6,3 +6,6 @@ export { default as FacebookIcon } from './socials/facebook-icon';
 export { default as InstagramIcon } from './socials/instagram-icon';
 export { default as TwitterIcon } from './socials/twitter-icon';
 export { default as YoutubeIcon } from './socials/youtube-icon';
+export { default as UrbanIcon } from './services/urban-icon';
+export { default as TribeIcon } from './services/tribe-icon';
+export { default as FamilyIcon } from './services/family-icon';

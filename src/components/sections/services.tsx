@@ -1,4 +1,4 @@
-import { LocationIcon } from "@/components/icons";
+import { FamilyIcon, LocationIcon, TribeIcon, UrbanIcon } from "@/components/icons";
 import Slider from "@/components/ui/slider";
 import { Box, Flex, HStack, Heading, Text, VStack } from "@chakra-ui/react";
 
@@ -9,6 +9,7 @@ const services = [
     description:
       "Social hub de alta experiencia, para millennials y zetas ejecutivos.",
     image: "/images/services/urban.webp",
+    icon: <UrbanIcon />,
     color: "brand.blue",
   },
   {
@@ -18,6 +19,7 @@ const services = [
       "Social hub de alta experiencia, para millennials y zetas ejecutivos.",
     image: "/images/services/tribe.webp",
     color: "brand.green",
+    icon: <TribeIcon />,
   },
   {
     location: "Arequipa",
@@ -26,6 +28,7 @@ const services = [
       "Social hub de alta experiencia, para millennials y zetas ejecutivos.",
     image: "/images/services/family.webp",
     color: "brand.magenta",
+    icon: <FamilyIcon />,
   },
 ];
 
@@ -36,6 +39,7 @@ interface ServiceCardProps {
     description: string;
     image: string;
     color: string;
+    icon: React.ReactNode;
   };
 }
 
@@ -56,7 +60,6 @@ const ServiceCard = ({ service }: ServiceCardProps) => (
     <Box
       bg={service.color}
       w={{ base: "100%", md: "356px" }}
-      h="108px"
       p={{ base: 4, md: 6 }}
       borderRadius="xl"
       position={{ base: "relative", md: "absolute" }}
@@ -75,6 +78,7 @@ const ServiceCard = ({ service }: ServiceCardProps) => (
           {service.location}
         </Text>
       </HStack>
+      <HStack>{service.icon}</HStack>
     </Box>
   </Flex>
 );
