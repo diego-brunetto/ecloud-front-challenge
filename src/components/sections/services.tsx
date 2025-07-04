@@ -1,36 +1,11 @@
-import { FamilyIcon, LocationIcon, TribeIcon, UrbanIcon } from "@/components/icons";
+import {
+  FamilyIcon,
+  LocationIcon,
+  TribeIcon,
+  UrbanIcon,
+} from "@/components/icons";
 import Slider from "@/components/ui/slider";
 import { Box, Flex, HStack, Heading, Text, VStack } from "@chakra-ui/react";
-
-const services = [
-  {
-    location: "Arequipa",
-    name: "Urban",
-    description:
-      "Social hub de alta experiencia, para millennials y zetas ejecutivos.",
-    image: "/images/services/urban.webp",
-    icon: <UrbanIcon />,
-    color: "brand.blue",
-  },
-  {
-    location: "Arequipa",
-    name: "Tribe",
-    description:
-      "Social hub de alta experiencia, para millennials y zetas ejecutivos.",
-    image: "/images/services/tribe.webp",
-    color: "brand.green",
-    icon: <TribeIcon />,
-  },
-  {
-    location: "Arequipa",
-    name: "Family",
-    description:
-      "Social hub de alta experiencia, para millennials y zetas ejecutivos.",
-    image: "/images/services/family.webp",
-    color: "brand.magenta",
-    icon: <FamilyIcon />,
-  },
-];
 
 interface ServiceCardProps {
   service: {
@@ -83,7 +58,49 @@ const ServiceCard = ({ service }: ServiceCardProps) => (
   </Flex>
 );
 
-const Services = () => {
+interface ServicesProps {
+  services: {
+    title: string;
+    description: string;
+    services: {
+      location: string;
+      name: string;
+      description: string;
+    }[];
+  };
+}
+
+const SERVICE_CONFIG = {
+  Urban: {
+    icon: UrbanIcon,
+    color: "brand.blue",
+    image: "/images/services/urban.webp",
+  },
+  Tribe: {
+    icon: TribeIcon,
+    color: "brand.green",
+    image: "/images/services/tribe.webp",
+  },
+  Family: {
+    icon: FamilyIcon,
+    color: "brand.magenta",
+    image: "/images/services/family.webp",
+  },
+} as const;
+
+const Services = ({ services }: ServicesProps) => {
+  const servicesData = services.services.map((service) => {
+    const config = SERVICE_CONFIG[service.name as keyof typeof SERVICE_CONFIG];
+    return {
+      location: service.location,
+      name: service.name,
+      description: service.description,
+      image: config.image,
+      icon: <config.icon />,
+      color: config.color,
+    };
+  });
+
   return (
     <Flex
       minW="100%"
@@ -115,17 +132,16 @@ const Services = () => {
             lineHeight="56px"
             letterSpacing="-0.02em"
           >
-            Hoteles que son hogares
+            {services.title}
           </Heading>
           <Text fontSize="20px" fontWeight="300" lineHeight="32px">
-            Siéntete parte de la tribu en un ambiente diseñado para que
-            experimentes el viaje que va a cambiar algo en ti.
+            {services.description}
           </Text>
         </VStack>
 
         {/* Mobile Version */}
         <VStack gap={6} hideFrom="md">
-          {services.map((service) => (
+          {servicesData.map((service) => (
             <ServiceCard key={service.name} service={service} />
           ))}
         </VStack>
@@ -135,7 +151,7 @@ const Services = () => {
           <Slider
             itemWidth="624px"
             gap={132}
-            slides={services.map((service) => ({
+            slides={servicesData.map((service) => ({
               id: service.name,
               content: <ServiceCard service={service} />,
             }))}

@@ -1,0 +1,91 @@
+{
+  "home": {
+    "title": "Tu tribu te espera",
+    "description": " Un hogar con espacio para coworkear, conectarte con aventuras locales y personas increíbles.",
+    "howItWorks": "Un hogar con espacio para coworkear, conectarte con aventuras locales y personas increíbles.",
+    "services": {
+      "title": "Hoteles que son hogares",
+      "description": "Siéntete parte de la tribu en un ambiente diseñado para que experimentes el viaje que va a cambiar algo en ti.",
+      "services": [
+        {
+          "location": "Arequipa",
+          "name": "Urban",
+          "description": "Social hub de alta experiencia, para millennials y zetas ejecutivos.",
+          "details": "Habitaciones VIP · Piscina Climatizada · Salón de eventos · Espacio Coworking · Wifi gratís",
+          "price": "Desde $4560/Noche"
+        },
+        {
+          "location": "Arequipa",
+          "name": "Tribe",
+          "description": "Exploradores, artistas y emprendedores juntos en un lugar único.",
+          "details": "Habitaciones VIP · Piscina · Gastronomía Vegana · Wifi gratís",
+          "price": "Desde $3190/Noche"
+        },
+        {
+          "location": "Arequipa",
+          "name": "Family",
+          "description": "Vive junto a toda tu familia la mejor experiencia de sus vidas.",
+          "details": "Habitaciones VIP · Piscina Climatizada · Actividades · Spa · Cancha de golf · Wifi gratís",
+          "price": "Desde $4560/Noche"
+        }
+      ]
+    },
+    "footer": {
+      "description": "Contáctanos y te ayudaremos a encontrar el mejor hotel para ti.",
+      "contact": {
+        "title": "Contacta con nosotros",
+        "phone": "T: (054) 1234567",
+        "email": "E: info@nomadperu.com.pe"
+      },
+      "links": [
+        {
+          "name": "Alojate",
+          "url": "/alojate"
+        },
+        {
+          "name": "Co-work",
+          "url": "/co-work"
+        },
+        {
+          "name": "Experimenta",
+          "url": "/experimenta"
+        },
+        {
+          "name": "Unete",
+          "url": "/unete"
+        },
+        {
+          "name": "Inversores",
+          "url": "/inversores"
+        }
+      ]
+    },
+    "navigation": {
+      "items": [
+        {
+          "label": "Alojate",
+          "href": "/alojate"
+        },
+        {
+          "label": "Co-work",
+          "href": "/co-work"
+        },
+        {
+          "label": "Experimenta",
+          "href": "/experimenta",
+          "isDropdown": true,
+          "submenu": [
+            { "label": "City Host", "href": "/city-host" },
+            { "label": "Actividades", "href": "/actividades" },
+            { "label": "Gastronomía", "href": "/gastronomia" },
+            { "label": "Eventos", "href": "/eventos" }
+          ]
+        },
+        {
+          "label": "Unete",
+          "href": "/unete"
+        }
+      ]
+    }
+  }
+}

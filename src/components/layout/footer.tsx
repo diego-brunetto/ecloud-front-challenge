@@ -8,7 +8,17 @@ import {
 import { Flex, HStack, Link, Text, VStack } from "@chakra-ui/react";
 import React from "react";
 
-const Footer = () => {
+interface FooterContent {
+  description: string;
+  contact: {
+    title: string;
+    phone: string;
+    email: string;
+  };
+  links: { name: string; url: string }[];
+}
+
+const Footer = ({ content }: { content: FooterContent }) => {
   return (
     <Flex
       bg="white"
@@ -32,8 +42,7 @@ const Footer = () => {
           letterSpacing="0.04em"
           textAlign={{ base: "center", md: "left" }}
         >
-          Here we should have a few words about what and who the company is.
-          This should serve well for SEO purposes.
+          {content.description}
         </Text>
         <HStack gap="8">
           <YoutubeIcon />
@@ -44,17 +53,17 @@ const Footer = () => {
       </VStack>
       <VStack>
         <Text fontWeight={600} fontSize="2xl" lineHeight="32px">
-          Contacta con nosotros
+          {content.contact.title}
         </Text>
-        <Text>T: (054) 1234567</Text>
-        <Text>E: info@nomadperu.com.pe</Text>
+        <Text>{content.contact.phone}</Text>
+        <Text>{content.contact.email}</Text>
       </VStack>
       <Flex hideBelow="lg" direction="column" gap="2">
-        <Link href="/">Alojate</Link>
-        <Link href="/">Co-work</Link>
-        <Link href="/">Experimenta</Link>
-        <Link href="/">Unete</Link>
-        <Link href="/">Inversores</Link>
+        {content.links.map((link) => (
+          <Link key={link.name} href={link.url}>
+            {link.name}
+          </Link>
+        ))}
       </Flex>
     </Flex>
   );

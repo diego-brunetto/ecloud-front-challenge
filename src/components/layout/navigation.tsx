@@ -25,23 +25,6 @@ interface NavItem {
   submenu?: SubmenuItem[];
 }
 
-// Navigation data
-const NAV_ITEMS: NavItem[] = [
-  { label: "Alojate", href: "/alojate" },
-  { label: "Co-Work", href: "/co-work" },
-  {
-    label: "Experimenta",
-    isDropdown: true,
-    submenu: [
-      { label: "City Host", href: "/city-host" },
-      { label: "Actividades", href: "/actividades" },
-      { label: "Gastronomía", href: "/gastronomia" },
-      { label: "Eventos", href: "/eventos" },
-    ],
-  },
-  { label: "Únete", href: "/unete" },
-];
-
 // Shared styles
 const CONTAINER_STYLES = {
   backgroundColor: "white",
@@ -123,7 +106,7 @@ const Logo = () => (
   </Box>
 );
 
-const DesktopNavigation = () => (
+const DesktopNavigation = ({ content }: { content: NavigationContent }) => (
   <Box
     hideBelow="lg"
     {...CONTAINER_STYLES}
@@ -135,7 +118,7 @@ const DesktopNavigation = () => (
     gap="8"
     h="full"
   >
-    {NAV_ITEMS.map((item, index) => (
+    {content.items.map((item, index) => (
       <NavigationLink
         key={item.label}
         item={item}
@@ -146,14 +129,37 @@ const DesktopNavigation = () => (
   </Box>
 );
 
-const MobileNavigation = () => (
+const MobileNavigation = ({ services }: { services: Service[] }) => (
   <HStack hideFrom="lg">
-    <ReserveDrawer showIcon buttonVariant="white" buttonSize="lg" />
+    <ReserveDrawer
+      showIcon
+      buttonVariant="white"
+      buttonSize="lg"
+    />
     <NavigationDrawer />
   </HStack>
 );
 
-const Navigation = () => {
+interface Service {
+  image: string;
+  name: string;
+  description: string;
+  details: string;
+  price: string;
+}
+
+interface NavigationContent {
+  items: NavItem[];
+  services: Service[];
+}
+
+const Navigation = ({
+  content,
+  services,
+}: {
+  content: NavigationContent;
+  services: Service[];
+}) => {
   return (
     <Flex
       as="nav"
@@ -169,8 +175,8 @@ const Navigation = () => {
       background="transparent"
     >
       <Logo />
-      <DesktopNavigation />
-      <MobileNavigation />
+      <DesktopNavigation content={content} />
+      <MobileNavigation services={services} />
     </Flex>
   );
 };

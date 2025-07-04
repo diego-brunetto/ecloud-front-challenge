@@ -1,6 +1,6 @@
 import { Flex, Heading } from "@chakra-ui/react";
 
-const Hero = () => {
+const Hero = ({ title }: { title: string }) => {
   return (
     <Flex
       backgroundImage={{
@@ -25,7 +25,7 @@ const Hero = () => {
         lineHeight={{ base: "68px", md: "110px" }}
         marginTop={{ base: "150px", md: "0px" }}
       >
-        Tu tribu te espera
+        {title}
       </Heading>
     </Flex>
   );

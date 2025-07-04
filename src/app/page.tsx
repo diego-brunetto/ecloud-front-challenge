@@ -1,14 +1,20 @@
 import Hero from "@/components/sections/hero";
 import HowItWorks from "@/components/sections/how-it-works";
 import Services from "@/components/sections/services";
-import { Flex } from "@chakra-ui/react";
+import { getContentBySlug } from "@/lib/content";
+import { VStack } from "@chakra-ui/react";
 
-export default function Home() {
+export default async function Home() {
+  const { home } = await getContentBySlug(
+    "home",
+    "index"
+  );
+
   return (
-    <Flex flexDirection="column">
-      <Hero />
-      <HowItWorks />
-      <Services />
-    </Flex>
+    <VStack>
+      <Hero title={home.title} />
+      <HowItWorks text={home.howItWorks} />
+      <Services services={home.services} />
+    </VStack>
   );
 }

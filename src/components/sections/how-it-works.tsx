@@ -1,6 +1,6 @@
 import { Flex, Highlight, Text } from "@chakra-ui/react";
 
-const HowItWorks = () => {
+const HowItWorks = ({ text }: { text: string }) => {
   return (
     <Flex
       minH="800px"
@@ -28,8 +28,7 @@ const HowItWorks = () => {
             paddingX: "3",
           }}
         >
-          Un hogar con espacio para coworkear, conectarte con aventuras locales
-          y personas increíbles.
+          {text}
         </Highlight>
       </Text>
     </Flex>

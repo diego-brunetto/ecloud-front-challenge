@@ -4,6 +4,7 @@ import { Provider } from "@/components/ui/provider";
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
+import { getContentBySlug } from "@/lib/content";
 
 // Using local fonts instead of TypeKit for better performance:
 // - No external HTTP requests
@@ -42,18 +43,23 @@ export const metadata: Metadata = {
   description: "Find the perfect hotel for digital nomads worldwide",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { home } = await getContentBySlug(
+    "home",
+    "index"
+  );
+
   return (
     <html lang="en" className={gibson.variable}>
       <body>
         <Provider>
-          <Navigation />
+          <Navigation content={home.navigation} services={home.services} />
           <main>{children}</main>
-          <Footer />
+          <Footer content={home.footer} />
         </Provider>
       </body>
     </html>
