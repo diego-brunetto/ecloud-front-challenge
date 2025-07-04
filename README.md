@@ -1,5 +1,58 @@
 # Ecloud Frontend Challenge
 
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (version 18 or higher)
+- pnpm (recommended) or npm
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/diego-brunetto/ecloud-front-challenge.git
+cd ecloud-front-challenge
+```
+
+2. Install dependencies:
+```bash
+pnpm install
+# or
+npm install
+```
+
+3. Run the development server:
+```bash
+pnpm dev
+# or
+npm run dev
+```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+
+### Available Scripts
+
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm start` - Start production server
+- `pnpm lint` - Run linting checks
+- `pnpm lint:fix` - Fix linting issues
+- `pnpm format` - Format code with Biome
+
+### Tech Stack
+
+- **Framework**: Next.js 15 with App Router
+- **UI Library**: Chakra UI v3
+- **Language**: TypeScript
+- **Package Manager**: pnpm
+- **Linting/Formatting**: Biome
+- **Deployment**: Vercel
+
+---
+
+#REQUIREMENTS
+## Ecloud Frontend Challenge
+
 El desafío es armar una homepage para Nomad, una cadena de hoteles para trabajadores nómades (como muchos de nosotros 🧳)
 
 ## Instrucciones generales:
